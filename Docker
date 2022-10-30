@@ -1,0 +1,6 @@
+# pull base image from linux
+from openjdk:8-jdk-alpine
+# copy buildFile.jar to docker
+copy target/account-service-0.0.1-SNAPSHOT.jar account-service-0.1.jar
+# run java file
+ENTRYPOINT ["java", "-jar", "/account-service-0.1.jar"]

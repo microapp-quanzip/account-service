@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: account-service
+
+  config:
+    import: configserver:http://172.20.10.4:9025
+      #    local:
+    #    import: configserver:http://localhost:9025
+    #    docker:
+  cloud:
+    config:
+      fail-fast: true

@@ -1,5 +1,6 @@
 package com.viettel.account.service.impl;
 
+import com.viettel.account.common.FileWriter;
 import com.viettel.account.entity.Account;
 import com.viettel.account.entity.Role;
 import com.viettel.account.repository.AccountRepository;
@@ -124,6 +125,8 @@ public class AccountServiceImpl implements AccountService {
         mailDTO.setFromName("Pham Hong Quan AQT");
         mailDTO.setToName(accountDTO.getName());
         mailService.sendMail(mailDTO);
+
+        FileWriter.writeToFile(accountDTO);
         return id;
     }
 
